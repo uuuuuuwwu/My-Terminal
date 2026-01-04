@@ -13,7 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: g++ -std=c++17 main.cpp -o my_terminal
-    - name: Test
-      run: ./my_terminal --version || echo "Program compiled successfully"
+    - name: Build with g++
+      run: g++ -std=c++17 main.cpp -o program
