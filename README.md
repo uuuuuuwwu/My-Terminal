@@ -1,4 +1,4 @@
-# Minimalist C++ CLI Shell Emulator
+# Minimalist C++ CLI Shell Emulator (learning project)
 
 A lightweight command-line interface (CLI) emulator written in C++ that simulates a terminal environment with user authentication, virtual paths, and administrative privilege escalation.
 
@@ -28,7 +28,7 @@ A lightweight command-line interface (CLI) emulator written in C++ that simulate
 ### Compilation
 Open your terminal and run:
 ```
-g++ -o shell_emulator main.cpp
+g++ -o shell_emulator C\ plus\ plus\ program.cpp
 ```
 ### Execution
 ```
