@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <map>
 #include <filesystem>
@@ -8,7 +8,7 @@ namespace fs = std::filesystem;
 
 std::string user_name;
 int users_password;
-fs::path current_path;
+fs::path current_path; // Оставлено только одно объявление
 char home_catalog = '~';
 bool admin = false;
 std::string admin_symbol = "[$]";
@@ -43,9 +43,9 @@ void crt() {
     std::cout << "\n[CLASS: crt] - File System Commands\n";
     std::cout << "-----------------------------------\n";
     std::cout << "crtCreateFolder      : Create a single folder\n";
-    std::cout << "crtCreateDirectories : [ADMIN] Create nested folders (path/to/dir)\n";
-    std::cout << "crtDeleteFolder      : Delete folder and its content\n";
-    std::cout << "cd                   : Change current directory\n";
+    std::cout << "crtCreateDirectories : [ADMIN] Create nested folders\n";
+    std::cout << "crtDeleteFolder      : Delete folder and content\n";
+    std::cout << "cd                   : Change directory\n";
     std::cout << "crt                  : Show this help message\n";
     std::cout << "-----------------------------------\n";
 }
@@ -115,8 +115,9 @@ void wannaBeAdmin() {
 
 void help() {
     std::cout << "\nHelp:\n";
-    std::cout << "Enter \"ec\" to see the info about the class ec\n";
-    std::cout << "Enter \"crt\" to see the info about the class crt\n";
+    std::cout << "Enter \"ec\" to see info about class ec\n";
+    std::cout << "Enter \"crt\" to see info about class crt\n";
+    std::cout << "System commands: clear, exit, iWannaBeAnAdmin\n";
 }
 
 int main() {
@@ -134,13 +135,11 @@ int main() {
     commands["ecVersion"] = showVersion;
     commands["ecName"] = showName;
     commands["ecPath"] = showPath;
-    
     commands["crt"] = crt;
     commands["crtCreateFolder"] = crtCreateFolder;
     commands["crtCreateDirectories"] = crtCreateDirectories;
     commands["crtDeleteFolder"] = crtDeleteFolder;
     commands["cd"] = cd;
-
     commands["clear"] = clear;
     commands["iWannaBeAnAdmin"] = wannaBeAdmin;
     commands["help"] = help;
@@ -157,7 +156,5 @@ int main() {
             std::cout << "Error: '" << input << "' is not a recognized command.\n";
         }
     }
-
     return 0;
 }
-
