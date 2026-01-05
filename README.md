@@ -37,5 +37,5 @@ g++ -o shell_emulator C\ plus\ plus\ program.cpp
 ##  Usage Example
 <img width="689" height="593" alt="Снимок экрана (33)" src="https://github.com/user-attachments/assets/179c906e-7bc7-46c0-ade8-56462297dc5e" />
 
-License
+### License
 This project is open-source and available under the MIT License.
