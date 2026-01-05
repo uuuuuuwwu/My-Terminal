@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <filesystem> // Стандарт C++17 и выше
+#include <filesystem> // Г‘ГІГ Г­Г¤Г Г°ГІ C++17 ГЁ ГўГ»ГёГҐ
 
 namespace fs = std::filesystem;
 
@@ -8,12 +8,12 @@ int main() {
     std::string input;
 
     while (true) {
-        // Показываем текущий путь для удобства (как в настоящей консоли)
+        // ГЏГ®ГЄГ Г§Г»ГўГ ГҐГ¬ ГІГҐГЄГіГ№ГЁГ© ГЇГіГІГј Г¤Г«Гї ГіГ¤Г®ГЎГ±ГІГўГ  (ГЄГ ГЄ Гў Г­Г Г±ГІГ®ГїГ№ГҐГ© ГЄГ®Г­Г±Г®Г«ГЁ)
         std::cout << "\nNow in: " << fs::current_path().string() << "\n";
         std::cout << "> ";
         std::getline(std::cin, input);
 
-        // 1. Команда создания: mkdir [имя]
+        // 1. ГЉГ®Г¬Г Г­Г¤Г  Г±Г®Г§Г¤Г Г­ГЁГї: mkdir [ГЁГ¬Гї]
         if (input.substr(0, 10) == "createDir ") {
             std::string dirName = input.substr(10);
             if (fs::create_directory(dirName)) {
@@ -24,12 +24,12 @@ int main() {
             }
         }
 
-        // 2. Команда перехода: goToDir [имя]
+        // 2. ГЉГ®Г¬Г Г­Г¤Г  ГЇГҐГ°ГҐГµГ®Г¤Г : goToDir [ГЁГ¬Гї]
         else if (input.substr(0, 8) == "goToDir ") {
             std::string dirName = input.substr(8);
 
             if (fs::exists(dirName) && fs::is_directory(dirName)) {
-                // МЕНЯЕМ ТЕКУЩУЮ ДИРЕКТОРИЮ ПРИЛОЖЕНИЯ
+                // ГЊГ…ГЌГџГ…ГЊ Г’Г…ГЉГ“Г™Г“Гћ Г„Г€ГђГ…ГЉГ’ГЋГђГ€Гћ ГЏГђГ€Г‹ГЋГ†Г…ГЌГ€Гџ
                 fs::current_path(dirName);
                 std::cout << "[System] Moved to: " << dirName << std::endl;
             }
